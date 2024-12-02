@@ -90,30 +90,21 @@ int consulta() //funcao para consultar
 		
 }
 
-int deletar() //deletar variaveis
-{
-	//inicio criacao de variaveis/string
-	char cpf[40];
-	//inicio criacao de variaveis/string
-	
-	printf("Digite o CPF do usuário a ser deletado: "); //coletar informacao do usuario
-	scanf("%s",cpf); //%s refere-se a string/salvar string
-	
-	remove(cpf); // deletar variaveis
-	
-	FILE *file; //criar arquivo
-	file = fopen(cpf,"r"); //abrir e ler arquivos no banco de dados
-	
-	if(file == NULL) //condicional para nulo
-    {
-    	printf("O usiário não se encontra no sistema!.\n"); //resposta caso seja um valor de variavel nulo
-    	system("pause");
-    	
-    	
-	
+int deletar() { 
+    char cpf[40];
+
+    printf("Digite o CPF do usuário que deseja deletar: ");
+    scanf("%s", cpf);
+
+    if (remove(cpf) == 0) {
+        printf("Usuário deletado com sucesso!\n");
+    } else {
+        printf("Usuário não cadastrado ou CPF incorreto.\n");
     }
-	
+    system("pause");
+    return 0;
 }
+
 
 
 int main() //funcao principal
