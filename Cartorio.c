@@ -111,53 +111,69 @@ int main() //funcao principal
     {
 	int opcao=0; //definindo as variaveis
 	int x=1;
+	char Senhadigitada[10]="a";
+	int comparacao;
 	
-	for(x=1;x=1;)
+	printf("### Cartório do Lucas ###\n\n");
+	printf("Login de administrador!\n\nDigite a sua senha: ");
+	scanf("%s",Senhadigitada);
+	
+	comparacao = strcmp(Senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
-		
-		system("cls"); //responsavel por limpar a tela
-		
-	    setlocale(LC_ALL, "Portuguese"); //definindo a linguagem
 	
-	    printf("### Cartório da EBAC ###\n\n");//inicio do menu
-	    printf("Escolha alguma das opçóes abaixo no menu:\n\n");
-	    printf("\t1 - Registrar nomes\n");
-	    printf("\t2 - Consultar os nomes\n");
-	    printf("\t3 - Deletar os nomes\n\n");
-	    printf("\t4 - Sair do sistema\n\n");
-	    printf("Opção");
-	
-	    scanf("%d", &opcao);//armazenando a escolha do usuario
-	
-	    system("cls");
-	    
-	    
-	    switch(opcao)//inicio da selecao do menu
+		system("cls");	
+	    for(x=1;x=1;)
 	    {
-	    	case 1:
-	    	registro(); //chamada de funcao
-			break;
-			
-			case 2:
-			consulta(); //chamada de funcao
-			break;
-			
-			case 3:
-			deletar(); //chamada de funcao
-			break;
-			
-			case 4:
-			printf("Obrigado por utilizar o sistema!\n");
-			return 0;
-			break;	
-			
-			default:
-			printf("Essa opção não está disponivel!\n"); //chamada de funcao
-	        system("pause");	
-	    	break;
+		
+			system("cls"); //responsavel por limpar a tela
+		
+		    setlocale(LC_ALL, "Portuguese"); //definindo a linguagem
+	
+	    	printf("### Cartório do Lucas ###\n\n");//inicio do menu
+		    printf("Escolha alguma das opçóes abaixo no menu:\n\n");
+		    printf("\t1 - Registrar nomes\n");
+		    printf("\t2 - Consultar os nomes\n");
+		    printf("\t3 - Deletar os nomes\n\n");
+		    printf("\t4 - Sair do sistema\n\n");
+		    printf("Opção");
+	
+		    scanf("%d", &opcao);//armazenando a escolha do usuario
+	
+		    system("cls");
+	    
+	    
+		    switch(opcao)//inicio da selecao do menu
+		    {
+		    	case 1:
+		    	registro(); //chamada de funcao
+				break;
 				
-		}  //fim da selecao de menu
+				case 2:
+				consulta(); //chamada de funcao
+				break;
+			
+				case 3:
+				deletar(); //chamada de funcao
+				break;
+			
+				case 4:
+				printf("Obrigado por utilizar o sistema!\n");
+				return 0;
+				break;	
+			
+				default:
+				printf("Essa opção não está disponivel!\n"); //chamada de funcao
+		        system("pause");	
+		    	break;
+				
+			}  //fim da selecao de menu
+	}
 }
+
+else
+	printf("Senha incorreta!");
 
 }
 
